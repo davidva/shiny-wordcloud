@@ -2,14 +2,14 @@ FROM r-base:latest
 
 MAINTAINER Flavio Barros "flaviommbarros@gmail.com"
 
-RUN apt-get update && apt-get install -y \
-    sudo \
-    gdebi-core \
-    pandoc \
-    pandoc-citeproc \
-    libcurl4-gnutls-dev \
-    libcairo2-dev/unstable \
-    libxt-dev
+RUN apt-get update
+RUN apt-get install -y sudo
+RUN apt-get install -y gdebi-core
+RUN apt-get install -y pandoc
+RUN apt-get install -y pandoc-citeproc
+RUN apt-get install -y libcurl4-gnutls-dev
+RUN apt-get install -y libcairo2
+RUN apt-get install -y libxt6
 
 # Download and install libssl 0.9.8
 RUN wget --no-verbose http://ftp.us.debian.org/debian/pool/main/o/openssl/libssl0.9.8_0.9.8o-4squeeze14_amd64.deb && \
